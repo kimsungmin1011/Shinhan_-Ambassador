@@ -25,7 +25,7 @@ function Header() {
           <li><Link to="/">홈</Link></li>
           <li><Link to="/activity">우리의 여정</Link></li>
           <li><Link to="/member">라인업 소개</Link></li>
-          <li><Link to="/map">4조가 다녀간 곳</Link></li>
+          <li><Link to="/map">신한 쏠(SOL) 탐구</Link></li>
         </ul>
       </nav>
     </div>

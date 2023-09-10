@@ -1,0 +1,15 @@
+.home-page {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: 768px) { /* 화면 크기가 768px 이하일 때 (모바일) */
+    h2 {
+      font-size: 1.2em;
+    margin-bottom: 15px;
+    /* font-family: 'Playfair Display', serif; */
+    }
+  }

@@ -58,3 +58,37 @@
   margin-right: 20px;
   margin-left: 50px;
 }
+
+/* 기존의 CSS ... */
+
+/* 반응형 웹 미디어 쿼리 */
+@media only screen and (max-width: 768px) { /* 화면 크기가 768px 이하일 때 */
+  
+  .title {
+    font-size: 1.15em;
+    margin-bottom: 15px;
+  }
+  
+  .content p {
+    font-size: 0.8em;
+    margin-bottom: 15px;
+  }
+
+  .homePageImg {
+    width: 95%;
+    height: 200px;
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+
+  .homePageImg1 {
+    width: 95%;
+    height: 230px;
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+
+  .text-content {
+    padding: 20px 30px; 
+  }
+}

@@ -9,7 +9,8 @@ import Youkyung from '../img/profile5.jpeg'
 import Youbin from '../img/profile6.jpeg'
 import Jieun from '../img/profile7.jpeg'
 import Haelin from '../img/profile8.jpeg'
-import './style/a.css';
+import './style/a.module.css';
+
 
 const rainbowColors = ['#99ccff'];
 
@@ -92,7 +93,7 @@ const people = [
 function PersonPage() {
     return (
       <div className='home-page'>
-        <h1>4조의 주역들</h1>
+        <h2>Shinbad's Member</h2>
         <div className="person-grid">
           {people.map((person, index) => {
             const color = rainbowColors[index % rainbowColors.length];

@@ -13,7 +13,7 @@ const Activity = () => {
 
   return (
     <div>
-      <h2>게시물 확인</h2>
+      <h2>신밧드의 탐험 일기</h2>
       <div className="post-container">
         {posts.map((post) => (
           <Link to={`/activity/${post.id}`} key={post.id} style={{ textDecoration: 'none', color: 'inherit' }}>

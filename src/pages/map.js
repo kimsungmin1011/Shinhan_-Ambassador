@@ -1,68 +1,43 @@
-/*global kakao */
-import React, { useEffect } from "react";
-import { markerdata } from "./markerData";
-import image1 from '../img/ok.jpg';
+import React from 'react';
+import styles from './style/ImageDisplay.css';
 
-const images = {
-  image1: image1,
-  // ... 다른 이미지 매핑 ...
-};
+// 이미지들 import
+import image1 from '../img/1.jpg';
+import image2 from '../img/2.jpg';
+import image3 from '../img/3.jpg';
+import image4 from '../img/4.jpg';
+import image5 from '../img/5.jpg';
+import image6 from '../img/6.jpg';
+import image7 from '../img/7.jpg';
+import image8 from '../img/8.jpg';
+import image9 from '../img/9.jpg';
+import image10 from '../img/10.jpg';
+import image11 from '../img/11.jpg';
+import image12 from '../img/12.jpg';
+import image13 from '../img/13.jpg';
+import image14 from '../img/14.jpg';
 
-export default function Map() {
-  useEffect(() => {
-    mapscript();
-  }, []);
-
-  const mapscript = () => {
-    let container = document.getElementById("map");
-    let options = {
-      center: new kakao.maps.LatLng(37.534272313844, 126.97534763076),
-      level: 8,
-    };
-
-    const map = new kakao.maps.Map(container, options);
-
-    let currentInfowindow = null; // 현재 열린 InfoWindow를 추적하기 위한 변수
-
-    markerdata.forEach((el) => {
-      let markerPosition = new kakao.maps.LatLng(el.lat, el.lng);
-
-      const marker = new kakao.maps.Marker({
-        map: map,
-        position: markerPosition,
-        title: el.title,
-      });
-
-      const imageSrc = images[el.imageId];
-
-      let infowindow = new kakao.maps.InfoWindow({
-        content: `<div style="padding:5px;">
-        <h4>${el.title}</h4>
-        <img src="${imageSrc}" alt="${el.title}" style="width: 150px;"/>
-        </div>`
-      });
-
-      kakao.maps.event.addListener(marker, 'click', function () {
-        // 이미 열린 InfoWindow가 있는 경우
-        if (currentInfowindow) {
-          currentInfowindow.close();
-          currentInfowindow = null;
-        } else {
-          infowindow.open(map, marker);
-          currentInfowindow = infowindow;
-        }
-      });
-    });
-  };
-
+const ImageDisplay = () => {
+  // 이미지들을 배열에 저장
+  const images = [
+    image1, image2, image3, image4, image5, 
+    image6, image7, image8, image9, image10, 
+    image11, image12, image13, image14
+  ];
 
   return (
-    <div>
-      <h2>4조 다녀감ㅋ</h2>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh" }}>
-        <div id="map" style={{ width: "80vw", height: "80vh" }}></div>
-      </div>
+    <div className="image-container">
+      <h2>쏠박사님을 아세요? (Prod. 신밧드)
+      </h2>
+      {images.map((image, index) => (
+        <img key={index} src={image} alt={`Image ${index + 1}`} />
+      ))}
     </div>
   );
 }
+
+export default ImageDisplay;
+
+
+
 
