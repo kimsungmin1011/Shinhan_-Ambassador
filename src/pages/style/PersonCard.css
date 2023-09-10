@@ -92,3 +92,23 @@
   object-fit: cover;
   transition: .3s;
 }
+
+@media screen and (max-width: 768px) {
+  .person-card .info-title {
+    font-size: 0.6em; /* Adjusted font size for mobile */
+  }
+
+  .school-major .school, .school-major .major {
+    font-size: 0.3em; /* Adjusted font size for mobile */
+  }
+
+  .info-container p {
+    font-size: 0.3em; /* Adjusted font size for mobile */
+  }
+  .social-container a {
+    width: 25px;  /* Adjusted size for mobile */
+    height: 25px; /* Adjusted size for mobile */
+  }
+
+  /*... Any other styles you want to adjust for mobile ...*/
+}

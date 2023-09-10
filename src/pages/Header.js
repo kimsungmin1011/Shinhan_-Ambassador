@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './style/Header.css';
 import logo from '../img/신대홍.png';
+import Shinbad from '../img/Shinbad.png';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,9 @@ function Header() {
   return (
     <div className="header">
       <img src={logo} alt="로고" />
-      <h1>👳신밧드의 모험</h1>
+      <Link to="/">
+        <img src={Shinbad} alt="신밧드" />
+      </Link>
       <button className="menu-button" onClick={toggleMenu}>
         ☰
       </button>
