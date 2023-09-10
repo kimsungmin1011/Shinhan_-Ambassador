@@ -1,0 +1,101 @@
+.header {
+  background-color: #f1f1f1;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  position: relative; /* 추가 */
+}
+
+.header img {
+  width: 280px;
+  margin-left: 120px;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+}
+
+.header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+}
+
+.header nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+.header nav ul li a:hover {
+  background-color: #ccc;
+}
+
+.menu-button {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: row; /* 여기를 row로 변경 */
+    justify-content: space-between; /* 각 요소를 양끝으로 분배 */
+    align-items: center;
+    padding: 0.5em;
+  }
+
+  .header img {
+    width: 80px;
+    margin-left: 0;
+  }
+
+  .header h1 {
+    font-size: 1.1em;
+    margin: 0; /* 상하 마진 제거 */
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  nav.closed {
+    display: none;
+  }
+  
+  nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ccc;
+    z-index: 10;  /* 값을 증가시켜 다른 요소 위에 나타나도록 설정 */
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .header nav ul li a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}

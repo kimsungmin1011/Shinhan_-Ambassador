@@ -1,0 +1,94 @@
+.person-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  width: 90%;
+  flex-basis: 100%;
+  border-radius: 14px;  /* 둥글게 만들기 위한 속성 추가 */
+}
+
+.image-container {
+  flex: 1;
+  text-align: left;
+}
+
+.info-container {
+  flex: 3;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-title {
+  font-size: 2em;
+  margin: 0;
+  margin-right: 16px; /* 이름과 학교 사이의 간격 */
+}
+
+.school-major {
+  text-align: left;
+}
+
+.school, .major {
+  margin: 0;
+}
+
+
+
+.person-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.person-card a img {
+  width: 32px;
+  height: 32px;
+}
+
+.person-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Your existing CSS here... */
+
+.social-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 100%; 
+  overflow: hidden; 
+}
+
+.social-container a {
+  display: flex;           /* 중앙 배치를 위한 flex 사용 */
+  justify-content: center; /* 가로로 내용 중앙 배치 */
+  align-items: center;     /* 세로로 내용 중앙 배치 */
+  width: 46px;             /* 크기 조정 */
+  height: 46px;            /* 크기 조정 */
+  background-color: #99ccff;
+  transition: .6s;
+  box-shadow: 0 5px 4px rgba(0,0,0,.5);
+}
+
+.social-container a:hover {
+  transform: translate(0, -10%);
+  background-color: #eb49d5; /* Instagram color upon hover */
+}
+
+.social-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
