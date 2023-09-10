@@ -5,12 +5,13 @@ import image1 from '../img/newjeans1.png';
 import image4 from '../img/ok.jpg';
 import image3 from '../img/seoul.jpg';
 import image2 from '../img/moneybus.jpg';
+import image6 from '../img/ETA.jpeg';
 import image0 from '../img/1.jpg';
 import image5 from '../img/Gangnam.jpeg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [image0, image1, image2, image3, image4];
+const images = [image0, image6,image1, image2, image3, image4];
 
 
 function HomePage() {
