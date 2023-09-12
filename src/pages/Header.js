@@ -11,10 +11,15 @@ function Header() {
     setIsMenuOpen(prevState => !prevState);
   }
 
+  // 추가된 함수: 메뉴 항목을 클릭했을 때 호출됩니다.
+  const closeMenuAndNavigate = () => {
+    setIsMenuOpen(false);
+  }
+
   return (
     <div className="header">
       <img src={logo} alt="로고" />
-      <Link to="/">
+      <Link to="/" onClick={closeMenuAndNavigate}>
         <img src={Shinbad} alt="신밧드" />
       </Link>
       <button className="menu-button" onClick={toggleMenu}>
@@ -22,14 +27,15 @@ function Header() {
       </button>
       <nav className={isMenuOpen ? 'open' : 'closed'}>
         <ul>
-          <li><Link to="/">홈</Link></li>
-          <li><Link to="/activity">우리의 여정</Link></li>
-          <li><Link to="/member">라인업 소개</Link></li>
-          <li><Link to="/map">신한 쏠(SOL) 탐구</Link></li>
+          <li><Link to="/" onClick={closeMenuAndNavigate}>홈</Link></li>
+          <li><Link to="/activity" onClick={closeMenuAndNavigate}>우리의 여정</Link></li>
+          <li><Link to="/member" onClick={closeMenuAndNavigate}>라인업 소개</Link></li>
+          <li><Link to="/map" onClick={closeMenuAndNavigate}>신한 쏠(SOL) 탐구</Link></li>
         </ul>
       </nav>
     </div>
   );
 }
+
 
 export default Header;
