@@ -9,6 +9,7 @@ import Activity2 from './pages/Activity/2';
 import Activity3 from './pages/Activity/3';
 import Activity4 from './pages/Activity/4';
 import Member from './pages/PersonPage';
+import GuestbookList from './pages/GuestbookList';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         {/* "/map" 경로 설정 */}
         <Route path="/map" element={<Map />} />
         <Route path="/member" element={<Member />} />
+
+        {/* 방명록 기능 구현 (Spring) */}
+        <Route path="/get" element={<GuestbookList />} />
 
         {/* 더 많은 라우트들을 필요에 따라 여기에 추가... */}
         <Route path="/activity" element={<Activity />} />
