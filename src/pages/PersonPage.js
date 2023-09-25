@@ -82,7 +82,7 @@ const people = [
     profileImage: Haelin,
     name: '홍혜린',
     school: '경희대학교',
-    major: '철학과',
+    major: 'Hospitality 경영학과',
     role: '',
     intro: '',
     instagramUrl: 'https://instagram.com/hxxlin_yy/'

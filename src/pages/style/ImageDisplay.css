@@ -1,26 +1,56 @@
 /* ImageDisplay.css */
 
-/* 기본 스타일 (웹) */
-.image-container {
-  text-align: center; /* 이미지 컨테이너 내의 요소를 가운데 정렬 */
+.image-display {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-img {
-    width: 95%; /* 웹 화면에서의 기본 이미지 크기 */
-    padding: 10px;
+.title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.post-info {
+  font-size: 0.8em;
+  color: #888;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.author, .date {
+  margin-right: 15px;
+}
+
+.content {
+  font-size: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  max-width: 95%;
+  max-height: 500px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 1.5em;
   }
-  
-  /* 반응형 웹 미디어 쿼리 */
-  @media only screen and (max-width: 768px) { /* 화면 크기가 768px 이하일 때 (모바일) */
-    
-    img {
-      width: 90%; /* 이미지가 화면의 90% 너비를 차지하도록 설정 */
-      margin: 0 auto; /* 이미지를 화면 중앙에 위치시킴 */
-      display: block; /* 이미지가 차례대로 세로로 표시됨 */
-    }
-    h2 {
-      font-size: 1.1em;
-    margin-bottom: 15px;
-    }
+
+  .post-info {
+    font-size: 0.7em;
   }
-  
+
+  .content {
+    font-size: 0.9em;
+  }
+}

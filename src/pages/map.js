@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style/ImageDisplay.css';
+import './style/ImageDisplay.css'; // 수정된 부분
 
 // 이미지들 import
 import image1 from '../img/1.jpg';
@@ -26,18 +26,19 @@ const ImageDisplay = () => {
   ];
 
   return (
-    <div className="image-container">
-      <h2>쏠박사님을 아세요? (Prod. 신밧드)
-      </h2>
-      {images.map((image, index) => (
-        <img key={index} src={image} alt={`Image ${index + 1}`} />
-      ))}
+    <div className="image-display">
+      <h1 className="title">쏠박사님을 아세요? (Prod. 신밧드)</h1>
+      <div className="post-info">
+        <span className="author">작성자: 쏠박사님</span>
+        <span className="date">작성일: 2023-09-22</span>
+      </div>
+      <div className="content">
+        {images.map((image, index) => (
+          <img key={index} src={image} alt={`Image ${index + 1}`} className="image" />
+        ))}
+      </div>
     </div>
   );
 }
 
 export default ImageDisplay;
-
-
-
-
