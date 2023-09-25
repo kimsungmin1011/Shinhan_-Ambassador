@@ -50,6 +50,7 @@ function HomePage() {
 
   return (
     <div className={styles['home-page']}>
+      <div style={{ height: '30px' }}></div> {/* 원하는 픽셀값으로 조절 */}
       <div className={styles.carousel}>
         <Slider {...settings}>
           {images.map((image, index) => (
