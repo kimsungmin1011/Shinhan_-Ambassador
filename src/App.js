@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Map from './pages/map';
+import QuizApp from './pages/QuizApp';
 import HomePage from './pages/HomePage';
 import Header from './pages/Header'; // Header 컴포넌트를 import합니다.
 import Activity from './pages/Activity'; // Activity 컴포넌트를 import합니다.
@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         {/* "/map" 경로 설정 */}
-        <Route path="/map" element={<Map />} />
+        <Route path="/quiz" element={<QuizApp />} />
         <Route path="/member" element={<Member />} />
 
         {/* 방명록 기능 구현 (Spring) */}
