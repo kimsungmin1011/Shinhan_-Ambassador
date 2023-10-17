@@ -16,7 +16,7 @@ const PersonCard = ({ profileImage, name, school, major, role, intro, instagramU
             <p className="major">{major}</p>
           </div>
         </div>
-        <p><strong>역할:</strong> {role}</p>
+        <p><strong>MBTI:</strong> {role}</p>
         <p><strong>자기소개:</strong> {intro}</p>
       </div>
       <div className="social-container">
