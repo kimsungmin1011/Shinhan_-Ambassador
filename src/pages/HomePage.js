@@ -11,7 +11,7 @@ import image5 from '../img/Gangnam.jpeg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [image0, image6,image1, image2, image3, image4];
+const images = [image1, image2, image3, image4, image0,image6];
 
 
 function HomePage() {

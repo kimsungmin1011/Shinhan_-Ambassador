@@ -8,6 +8,7 @@ import Activity1 from './pages/Activity/1'; // Activity 컴포넌트를 import�
 import Activity2 from './pages/Activity/2';
 import Activity3 from './pages/Activity/3';
 import Activity4 from './pages/Activity/4';
+import Crime from './pages/crime';
 import Member from './pages/PersonPage';
 import GuestbookList from './pages/GuestbookList';
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         {/* 홈페이지 경로 설정 */}
         <Route path="/" element={<HomePage />} />
+        <Route path="/crime" element={<Crime />} />
 
         {/* "/map" 경로 설정 */}
         <Route path="/quiz" element={<QuizApp />} />
