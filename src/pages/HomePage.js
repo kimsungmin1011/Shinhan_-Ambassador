@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import styles from './style/HomePage.module.css';
-import image1 from '../img/newjeans1.png';
-import image4 from '../img/ok.jpg';
+import image1 from '../img/hangul.jpg';
+import image6 from '../img/ok.jpg';
 import image3 from '../img/seoul.jpg';
-import image2 from '../img/moneybus.jpg';
-import image6 from '../img/ETA.jpeg';
+import image2 from '../img/mount.jpg';
+import image4 from '../img/ETA.jpeg';
 import image0 from '../img/invite.jpg';
 import image5 from '../img/Gangnam.jpeg';
 import "slick-carousel/slick/slick.css";
