@@ -59,6 +59,31 @@
   margin-left: 50px;
 }
 
+/* Existing styles remain unchanged */
+
+.footer {
+  background-color: #f1f1f1; /* Example background color */
+  padding: 20px 0; /* Example padding */
+  text-align: center; /* Centers the text */
+}
+
+.footer-content {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Centers the content within the footer */
+  padding: 10px; /* Example padding for content */
+  display: flex;
+  justify-content: space-between; /* Distributes space between and around content items */
+  align-items: center; /* Align items vertically */
+}
+
+.footer-content p {
+  margin: 0; /* Removes default margin */
+  color: #333; /* Example text color */
+}
+
+/* You can add more specific styles targeting the text, links, or social media icons within the footer */
+
+
 /* 기존의 CSS ... */
 
 /* 반응형 웹 미디어 쿼리 */

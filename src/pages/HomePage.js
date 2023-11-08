@@ -77,6 +77,13 @@ function HomePage() {
           {/* ... 작업 버튼 (수정, 삭제 등) */}
         </div>
       </div>
+      <footer className={styles.footer}>
+        <div className={styles['footer-content']}>
+          <p>© 2023 신밧드의 모험. All rights reserved.</p>
+          <p>신한은행 대학생 홍보대사 39기 서경강 4팀</p>
+          {/* Add any additional footer content here */}
+        </div>
+      </footer>
     </div>
   );
 }
