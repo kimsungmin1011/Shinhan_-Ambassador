@@ -68,7 +68,7 @@ function HomePage() {
         </h2>
 
         <div className={styles.content}>
-          <img src={image5} className={styles.homePageImg1}/>
+          <img src={image5} className={styles.homePageImg1} />
           <p>안녕하세요. 신한은행 대학생 홍보대사 39기 서경강 4팀 '신밧드의 모험'입니다!</p>
           <p>우리의 모험에 함께 하지 않을래?👀</p>
           <p>"대학생활의 소중한 경험을 신한은행과 함께!"</p>

@@ -18,7 +18,7 @@ function HomePage() {
 
       {/* 글의 본문 */}
       <div className="content">
-      <img src={fishing} className={styles.homePageImg}/>
+      <img src={fishing} className={styles.homePageImg} />
         <p>보이스피싱, 즉 전화금융사기는 현대 사회에서 누구도 예외일 수 없는 심각한 범죄 행위입니다.</p>
         <p>이는 단순한 사기 행위를 넘어서서 피해자의 재산은 물론 심리적 안정까지 극심하게 위협하는 범죄로, 고도로 계획되고 치밀하게 실행되기 때문에, 특히 인터넷과 모바일 기기 사용이 일상화된 오늘날 더욱 그 위험이 증가하고 있습니다.</p>
         {/* 다른 홈페이지 관련 내용들... */}

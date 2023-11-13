@@ -10,7 +10,7 @@ function Guestbook() {
 
     useEffect(() => {
         async function fetchEntries() {
-            const response = await axios.get('http://localhost:8080/guestbook');
+            const response = await axios.get('13.125.120.242:8080/guestbook');
             setEntries(response.data);
         }
         fetchEntries();
@@ -18,11 +18,11 @@ function Guestbook() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:8080/guestbook', { name, content });
+        await axios.post('13.125.120.242:8080/guestbook', { name, content });
         setName('');
         setContent('');
         // Fetch entries again to refresh the list without reloading the entire page
-        const response = await axios.get('http://localhost:8080/guestbook');
+        const response = await axios.get('13.125.120.242:8080/guestbook');
         setEntries(response.data);
     }
 
