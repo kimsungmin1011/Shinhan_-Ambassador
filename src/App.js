@@ -11,10 +11,12 @@ import Activity4 from './pages/Activity/4';
 import Crime from './pages/crime';
 import Member from './pages/PersonPage';
 import GuestbookList from './pages/GuestbookList';
+import styles from './pages/style/HomePage.module.css';
 
 
 function App() {
   return (
+    <>
     <Router>
       <Header />
       <Routes>
@@ -37,6 +39,13 @@ function App() {
         <Route path="/activity/4" element={<Activity4 />} /> {/* Activity 라우트를 추가합니다. */}
       </Routes>
     </Router>
+    <footer className={styles.footer}>
+        <div className={styles['footer-content']}>
+          <p>© 2023 Shinbad adventures All rights reserved</p>
+          {/* Add any additional footer content here */}
+        </div>
+      </footer>
+    </>
   );
 }
 

@@ -116,4 +116,17 @@
   .text-content {
     padding: 20px 30px; 
   }
+  .footer {
+    padding: 15px 0; /* Reduced padding for smaller screens */
+  }
+
+  .footer-content {
+    flex-direction: column; /* Stack content vertically on small screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .footer-content p {
+    margin-bottom: 10px; /* Add space between paragraphs */
+    text-align: left; /* Align text to the left */
+  }
 }
