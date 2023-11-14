@@ -11,7 +11,7 @@ function Guestbook() {
     useEffect(() => {
         async function fetchEntries() {
             const response = await axios.get('http://13.125.120.242:8080/guestbook');
-            setEntries(response.data);
+            setEntries(response.data.reverse()); // 최신순으로 가져오기
         }
         fetchEntries();
     }, []);
@@ -21,9 +21,9 @@ function Guestbook() {
         await axios.post('http://13.125.120.242:8080/guestbook', { name, content });
         setName('');
         setContent('');
-        // Fetch entries again to refresh the list without reloading the entire page
+        // 전체 페이지를 다시 로드하지 않고 목록을 새로 고치기 위해 항목을 다시 가져옴
         const response = await axios.get('http://13.125.120.242:8080/guestbook');
-        setEntries(response.data);
+        setEntries(response.data.reverse());
     }
 
     return (
