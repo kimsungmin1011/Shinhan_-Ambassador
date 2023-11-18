@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import fishing from '../img/crime.png';
 import styles from './style/HomePage.module.css';
+import ReactGA from 'react-ga';
 
+const TRACKING_ID = "G-XDS9C62ZZV";
 
 function HomePage() {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <div className="home-page">
       {/* 글의 제목 */}
