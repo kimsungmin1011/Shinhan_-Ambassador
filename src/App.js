@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import QuizApp from './pages/QuizApp';
 import HomePage from './pages/HomePage';
@@ -12,9 +12,15 @@ import Crime from './pages/crime';
 import Member from './pages/PersonPage';
 import GuestbookList from './pages/GuestbookList';
 import styles from './pages/style/HomePage.module.css';
+import ReactGA from 'react-ga';
 
+const TRACKING_ID = "G-XDS9C62ZZV";
 
 function App() {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <>
     <Router>
