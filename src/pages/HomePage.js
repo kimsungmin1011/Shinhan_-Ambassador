@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import styles from './style/HomePage.module.css';
 import image1 from '../img/hangul.jpg';
-import image6 from '../img/ok.jpg';
+// import image6 from '../img/ok.jpg';
 import image3 from '../img/seoul.jpg';
+import image7 from '../img/win.jpeg';
+import image8 from '../img/undong.jpeg';
+import image9 from '../img/game.jpeg';
 import image2 from '../img/mount.jpg';
 import image4 from '../img/ETA.jpeg';
 import image0 from '../img/invite.jpg';
@@ -11,7 +14,7 @@ import image5 from '../img/Gangnam.jpeg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [image1, image2, image3, image4, image0,image6];
+const images = [image7,image8,image9,image1, image2, image3, image4, image0];
 
 
 function HomePage() {
@@ -50,7 +53,7 @@ function HomePage() {
 
   return (
     <div className={styles['home-page']}>
-      <div style={{ height: '30px' }}></div> {/* 원하는 픽셀값으로 조절 */}
+      <div style={{ height: '10px' }}></div> {/* 원하는 픽셀값으로 조절 */}
       <div className={styles.carousel}>
         <Slider {...settings}>
           {images.map((image, index) => (
