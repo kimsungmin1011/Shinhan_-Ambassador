@@ -8,6 +8,8 @@ import Activity1 from './pages/Activity/1'; // Activity 컴포넌트를 import�
 import Activity2 from './pages/Activity/2';
 import Activity3 from './pages/Activity/3';
 import Activity4 from './pages/Activity/4';
+import Write from './pages/write';
+import Tree from './pages/tree';
 import Crime from './pages/crime';
 import Member from './pages/PersonPage';
 import GuestbookList from './pages/GuestbookList';
@@ -36,6 +38,8 @@ function App() {
 
         {/* 방명록 기능 구현 (Spring) */}
         <Route path="/get" element={<GuestbookList />} />
+        <Route path="/tree" element={<Tree />} />
+        <Route path="/write" element={<Write />} />
 
         {/* 더 많은 라우트들을 필요에 따라 여기에 추가... */}
         <Route path="/activity" element={<Activity />} />

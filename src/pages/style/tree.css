@@ -1,0 +1,51 @@
+.trees-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.tree {
+  flex: 0 0 100vw; /* 화면 너비에 맞춰 크기 조정 */
+  margin: 10px;
+  cursor: pointer;
+  scroll-snap-align: start;
+  display: flex; /* Flex 레이아웃 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  position: relative; /* 상대적 위치 설정 */
+}
+
+.tree img {
+  max-width: 80%; /* 이미지 크기를 늘림 */
+  height: auto;
+  max-height: 80vh; /* 뷰포트 높이의 80%를 최대 높이로 설정 */
+}
+
+.tree p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.tree-name {
+  position: absolute; /* 절대적 위치 설정 */
+  top: 10%; /* 이미지 위쪽에서부터의 위치 */
+  left: 50%; /* 왼쪽에서부터 50%의 위치 */
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  color: white; /* 글자 색상 */
+  font-size: 1.5em; /* 크기 조정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  z-index: 10; /* 다른 요소 위에 오도록 z-index 설정 */
+}
+
+.nick-image {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; /* instead of max-width */
+  height: 100px; /* instead of max-height */
+  z-index: 10;
+}
+

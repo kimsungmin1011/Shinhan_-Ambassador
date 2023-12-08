@@ -1,0 +1,81 @@
+.guestbook-list {
+    max-width: 800px; /* 너비 조정 */
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.entries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 컬럼으로 구성 */
+    gap: 10px; /* 그리드 간격 */
+}
+
+.entry {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.letter {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.write-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.write-button:hover {
+    background-color: #45a049;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
+
+.snowflake {
+    position: absolute;
+    top: -100px;
+    color: #fff;
+    opacity: 0.8;
+    font-size: 1em;
+    animation-name: fall;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+body {
+    background-image: url('../../img/purple.jpeg'); /* 'img' 폴더 내의 'purple.jpeg' 파일을 배경 이미지로 설정 */
+    background-size: cover; /* 이미지가 화면을 전체적으로 커버하도록 설정 */
+    background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+    background-position: center; /* 이미지가 화면 중앙에 위치하도록 설정 */
+}
+
+
+
+
+  

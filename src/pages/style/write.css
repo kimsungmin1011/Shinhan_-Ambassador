@@ -1,0 +1,39 @@
+.write-form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.write-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.write-form input, 
+.write-form textarea {
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.write-form textarea {
+    height: 100px;
+}
+
+.write-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.write-form button:hover {
+    background-color: #45a049;
+}

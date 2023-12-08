@@ -1,65 +1,75 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import './style/Guestbook.css';
+import { useNavigate } from 'react-router-dom'; // useNavigate 훅 추가
+import './style/GuestbookList.css';
 
-
-function Guestbook() {
+function GuestbookList() {
     const [entries, setEntries] = useState([]);
-    const [name, setName] = useState('');
-    const [content, setContent] = useState('');
-    const [team, setTeam] = useState('');
+    const [selectedEntry, setSelectedEntry] = useState(null);
+    const navigate = useNavigate(); // useNavigate 사용
 
     useEffect(() => {
         async function fetchEntries() {
             const response = await axios.get('http://localhost:8080/guestbook');
-            setEntries(response.data.reverse()); // 최신순으로 가져오기
+            setEntries(response.data);
         }
         fetchEntries();
+        // 눈송이 추가
+    function addSnowflakes() {
+        const snowflakeCount = 50; // 원하는 눈송이의 수
+        for (let i = 0; i < snowflakeCount; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; // 눈송이가 떨어지는 속도를 랜덤하게 조절
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.body.appendChild(snowflake);
+        }
+    }
+
+    addSnowflakes();
     }, []);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await axios.post('http://localhost:8080/guestbook', { name, content, team });
-        setName('');
-        setContent('');
-        setTeam('');
-        const response = await axios.get('http://localhost:8080/guestbook');
-        setEntries(response.data.reverse());
-    }
-    
+    const handleEntryClick = (entry) => {
+        setSelectedEntry(entry);
+    };
+
+    const handleWriteButtonClick = () => {
+        navigate('/write'); // useNavigate를 이용한 경로 이동
+    };
+
+    const renderModal = () => {
+        if (!selectedEntry) return null;
+        return (
+            <div className="modal">
+                <h2>메시지 상세</h2>
+                <p><strong>이름:</strong> {selectedEntry.name}</p>
+                <p><strong>팀명:</strong> {selectedEntry.team}</p>
+                <p><strong>내용:</strong> {selectedEntry.content}</p>
+                <button onClick={() => setSelectedEntry(null)}>닫기</button>
+            </div>
+        );
+    };
 
     return (
-        <div className="guestbook">
-            <div className="entries">
-                {entries.map((entry, index) => (
-                    <div key={index} className="entry">
-                        <strong>{entry.name} ({entry.team}):</strong> {entry.content}
+        <>
+        <div className="guestbook-list">
+            <div className="entries-grid">
+                {entries.map((entry) => (
+                    <div key={entry.id} className="entry" onClick={() => handleEntryClick(entry)}>
+                        <div className="letter">
+                            <p>메시지 #{entry.id}</p>
+                        </div>
                     </div>
                 ))}
             </div>
-            <form onSubmit={handleSubmit} className="form">
-                <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="이름"
-                    className="name-input"
-                />
-                <input
-                    value={team}
-                    onChange={(e) => setTeam(e.target.value)}
-                    placeholder="팀명"
-                    className="team-input"
-                />
-                <textarea
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                    placeholder="메시지를 입력하세요"
-                    className="content-textarea"
-                />
-                <button type="submit" className="submit-btn">전송</button>
-            </form>
+            {renderModal()}
+            <button className="write-button" onClick={handleWriteButtonClick}>메시지 작성</button>
         </div>
+        </>
     );
 }
 
-export default Guestbook;
+export default GuestbookList;
