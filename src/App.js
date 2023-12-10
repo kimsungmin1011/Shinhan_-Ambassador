@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import QuizApp from './pages/QuizApp';
 import HomePage from './pages/HomePage';
 import Header from './pages/Header'; // Header 컴포넌트를 import합니다.
 import Activity from './pages/Activity'; // Activity 컴포넌트를 import합니다.
@@ -12,7 +11,18 @@ import Write from './pages/write';
 import Tree from './pages/tree';
 import Crime from './pages/crime';
 import Member from './pages/PersonPage';
-import GuestbookList from './pages/GuestbookList';
+import FMList from './pages/FMList';
+import MoliList from './pages/MoliList';
+import NewschoolList from './pages/NewschoolList';
+import ShinbadList from './pages/ShinbadList';
+import MenuList from './pages/MenuList';
+import ShiningList from './pages/ShiningList';
+import ShinhwaList from './pages/ShinhwaList';
+import ShinarioList from './pages/ShinarioList';
+import ShinaeList from './pages/ShinaeList';
+import SwithList from './pages/SwithList';
+import Sis1List from './pages/Sis1List';
+import CrimeList from './pages/CrimeList';
 import styles from './pages/style/HomePage.module.css';
 import ReactGA from 'react-ga';
 
@@ -33,11 +43,21 @@ function App() {
         <Route path="/crime" element={<Crime />} />
 
         {/* "/map" 경로 설정 */}
-        <Route path="/quiz" element={<QuizApp />} />
         <Route path="/member" element={<Member />} />
 
         {/* 방명록 기능 구현 (Spring) */}
-        <Route path="/get" element={<GuestbookList />} />
+        <Route path="/get" element={<FMList />} />
+        <Route path="/get2" element={<MoliList />} />
+        <Route path="/get3" element={<NewschoolList />} />
+        <Route path="/get4" element={<ShinbadList />} />
+        <Route path="/get5" element={<MenuList />} />
+        <Route path="/get6" element={<ShiningList />} />
+        <Route path="/get7" element={<ShinhwaList />} />
+        <Route path="/get8" element={<ShinarioList />} />
+        <Route path="/get9" element={<ShinaeList />} />
+        <Route path="/get10" element={<SwithList />} />
+        <Route path="/get11" element={<Sis1List />} />
+        <Route path="/get12" element={<CrimeList />} />
         <Route path="/tree" element={<Tree />} />
         <Route path="/write" element={<Write />} />
 

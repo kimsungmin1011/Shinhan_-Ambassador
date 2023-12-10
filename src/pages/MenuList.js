@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // useNavigate 훅 추가
 import './style/GuestbookList.css';
 
-function GuestbookList() {
+function MenuList() {
     const [entries, setEntries] = useState([]);
     const [selectedEntry, setSelectedEntry] = useState(null);
     const navigate = useNavigate(); // useNavigate 사용
 
     useEffect(() => {
         async function fetchEntries() {
-            const response = await axios.get('http://localhost:8080/guestbook');
+            const response = await axios.get('http://localhost:8080/guestbook/신메뉴');
             setEntries(response.data);
         }
         fetchEntries();
@@ -36,17 +36,13 @@ function GuestbookList() {
         setSelectedEntry(entry);
     };
 
-    const handleWriteButtonClick = () => {
-        navigate('/write'); // useNavigate를 이용한 경로 이동
-    };
-
     const renderModal = () => {
         if (!selectedEntry) return null;
         return (
             <div className="modal">
                 <h2>메시지 상세</h2>
                 <p><strong>이름:</strong> {selectedEntry.name}</p>
-                <p><strong>팀명:</strong> {selectedEntry.team}</p>
+                <p><strong>소속팀:</strong> {selectedEntry.team}</p>
                 <p><strong>내용:</strong> {selectedEntry.content}</p>
                 <button onClick={() => setSelectedEntry(null)}>닫기</button>
             </div>
@@ -66,10 +62,9 @@ function GuestbookList() {
                 ))}
             </div>
             {renderModal()}
-            <button className="write-button" onClick={handleWriteButtonClick}>메시지 작성</button>
         </div>
         </>
     );
 }
 
-export default GuestbookList;
+export default MenuList;

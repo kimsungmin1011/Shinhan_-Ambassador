@@ -10,11 +10,12 @@ import image9 from '../img/game.jpeg';
 import image2 from '../img/mount.jpg';
 import image4 from '../img/ETA.jpeg';
 import image0 from '../img/invite.jpg';
+import image88 from '../img/11win.jpeg';
 import image5 from '../img/Gangnam.jpeg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [image7,image8,image9,image1, image2, image3, image4, image0];
+const images = [image88,image8,image9,image1, image7,image2, image3, image4, image0];
 
 
 function HomePage() {

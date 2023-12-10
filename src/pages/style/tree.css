@@ -44,8 +44,22 @@
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px; /* instead of max-width */
-  height: 100px; /* instead of max-height */
+  width: 75px; /* 너비 조정 */
+  height: 75px; /* 높이 조정 */
   z-index: 10;
 }
 
+.tree .stars {
+  position: absolute;
+  top: 0; /* 이미지 상단에 위치 */
+  left: 50%; /* 이미지 가운데에 위치 */
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  display: flex; /* 별들을 가로로 나열 */
+  align-items: center; /* 세로 중앙 정렬 */
+  color: gold; /* 별 색상 */
+  z-index: 20; /* 이미지 위에 표시되도록 z-index 설정 */
+}
+
+.tree .star {
+  margin-right: 5px; /* 별 사이의 간격 */
+}
