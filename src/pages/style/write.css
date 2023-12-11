@@ -1,31 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* 기본 스타일 */
 .write-form {
+    font-family: 'Indie Flower', cursive;
+    background-image: url('../../img/paper-texture.jpeg');
+    background-size: cover;
+    background-position: center; /* 이미지가 중앙에 위치하도록 설정 */
     border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 400px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
-}
-
-.write-form form {
-    display: flex;
-    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .write-form input, 
-.write-form textarea {
+.write-form textarea, 
+.write-form select {
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 8px 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    max-width: 95%;
 }
 
 .write-form textarea {
-    height: 100px;
+    font-size: 18px;
+    height: 250px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-element {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
 }
 
 .write-form button {
-    background-color: #4CAF50;
+    background-color: #fc65f9;
     color: white;
     border: none;
     border-radius: 5px;
@@ -35,5 +57,30 @@
 }
 
 .write-form button:hover {
-    background-color: #45a049;
+    background-color: #bc148a;
+}
+
+/* 모바일 기기를 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .write-form {
+        max-width: 100%; /* 폼의 최대 너비를 화면의 100%로 설정 */
+        width: auto; /* 폼의 너비를 자동으로 조절하도록 설정 */
+        padding: 15px; /* 패딩 감소 */
+        margin: 20px auto; /* 상단 마진 감소 */
+        background-size: contain; /* 이미지가 화면 너비에 맞도록 조정 */
+        background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+    }
+
+    .form-element {
+        padding: 6px 8px; /* 입력 필드 패딩 감소 */
+    }
+
+    .write-form textarea {
+        height: 200px; /* 텍스트 영역의 높이 조정 */
+    }
+    .write-form input, 
+    .write-form textarea, 
+    .write-form select {
+        max-width: 90%;
+    }
 }

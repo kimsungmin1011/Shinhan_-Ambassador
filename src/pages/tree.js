@@ -7,6 +7,11 @@ import Fm from '../img/fm.png';
 import Moli from '../img/moli.png';
 import Newschool from '../img/newschool.png';
 import Menu from '../img/menu.png';
+import Toy from '../img/toy.png';
+import Toy1 from '../img/toy1.png';
+import Toy2 from '../img/toy2.png';
+import Toy4 from '../img/toy4.png';
+import Toy5 from '../img/toy5.png';
 import Shinhwa from '../img/shinhwa.png';
 import Shinrio from '../img/shinario.png';
 import Shining from '../img/shining.png';
@@ -34,8 +39,11 @@ const treeData = [
 
 // 별을 생성하는 함수
 const createStars = (count) => {
-  return Array(count).fill('*');
+  const images = [Toy, Toy1, Toy2, Toy4, Toy5]; // 사용할 이미지들
+  return Array.from({ length: count }, (_, i) => images[i % images.length]);
 };
+
+
 
 // Tree 컴포넌트
 const Tree = ({ name, url, image, nickimage, messageCount }) => {
@@ -43,8 +51,8 @@ const Tree = ({ name, url, image, nickimage, messageCount }) => {
     <div className="tree" onClick={() => window.location.href = url}>
       <img src={image} alt={name} className="tree-image" />
       <div className="star-container">
-        {createStars(messageCount).map((star, index) => (
-          <span key={index} className="star">{star}</span>
+        {createStars(messageCount).map((starPath, index) => (
+          <img key={index} src={starPath} alt="star" className="star" />
         ))}
       </div>
       <img src={nickimage} alt={`${name} nick`} className="nick-image" />
@@ -54,6 +62,7 @@ const Tree = ({ name, url, image, nickimage, messageCount }) => {
     </div>
   );
 };
+
 
 // TreesContainer component
 const TreesContainer = ({ messageCounts }) => (
@@ -80,6 +89,22 @@ function App() {
       navigate('/write'); // useNavigate를 이용한 경로 이동
   };  
   useEffect(() => {
+    // 눈송이 추가
+    function addSnowflakes() {
+      const snowflakeCount = 60; // 원하는 눈송이의 수
+      for (let i = 0; i < snowflakeCount; i++) {
+          const snowflake = document.createElement('div');
+          snowflake.classList.add('snowflake');
+          snowflake.textContent = '❄';
+          snowflake.style.left = Math.random() * 100 + 'vw';
+          snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; // 눈송이가 떨어지는 속도를 랜덤하게 조절
+          snowflake.style.opacity = Math.random();
+          snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+          document.body.appendChild(snowflake);
+      }
+  }
+  addSnowflakes();
+  
     // 모든 팀에 대한 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
@@ -88,11 +113,11 @@ function App() {
         // treeData의 각 팀을 순회
         for (let i = 0; i < treeData.length; i++) {
           const teamName = treeData[i].name;
-          const response = await axios.get(`http://localhost:8080/guestbook/${teamName}`);
-          newMessageCounts[i] = response.data.length; // 각 팀의 메시지 수 업데이트
+          const response = await axios.get(`http://15.164.241.134:8080/guestbook/${teamName}`);
+          newMessageCounts[i] = response.data.length; // 각 팀의 편지 수 업데이트
         }
   
-        setMessageCounts(newMessageCounts); // 새 메시지 수로 상태 업데이트
+        setMessageCounts(newMessageCounts); // 새 편지 수로 상태 업데이트
       } catch (error) {
         console.error('데이터를 가져오는 중 오류 발생: ', error);
         alert('통신에 문제가 발생했습니다. DM으로 문의 바랍니다.');
@@ -105,7 +130,7 @@ function App() {
     return (
       <div className="App">
         <TreesContainer messageCounts={messageCounts} />
-        <button className="write-button" onClick={handleWriteButtonClick}>메시지 작성</button>
+        <button className="write-button" onClick={handleWriteButtonClick}>편지 작성</button>
       </div>
     );
   }

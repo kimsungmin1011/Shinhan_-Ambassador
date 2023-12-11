@@ -134,7 +134,7 @@
     padding: 20px 30px; 
   }
   .footer {
-    padding: 15px 0; /* Reduced padding for smaller screens */
+    padding: 5px 0; /* Reduced padding for smaller screens */
   }
 
   .footer-content {
@@ -143,7 +143,8 @@
   }
 
   .footer-content p {
-    margin-bottom: 10px; /* Add space between paragraphs */
+    margin-bottom: 5px; /* Add space between paragraphs */
     text-align: left; /* Align text to the left */
+    font-size: 0.75em;
   }
 }

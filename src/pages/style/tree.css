@@ -49,17 +49,24 @@
   z-index: 10;
 }
 
-.tree .stars {
+.tree .star-container {
   position: absolute;
-  top: 0; /* 이미지 상단에 위치 */
+  top: 40%; /* 이미지 상단에 위치 */
   left: 50%; /* 이미지 가운데에 위치 */
   transform: translateX(-50%); /* 가로 중앙 정렬 */
   display: flex; /* 별들을 가로로 나열 */
+  flex-wrap: wrap; /* 줄바꿈 허용 */
   align-items: center; /* 세로 중앙 정렬 */
   color: gold; /* 별 색상 */
   z-index: 20; /* 이미지 위에 표시되도록 z-index 설정 */
+  max-width: 180px; /* 최대 너비 설정 */
 }
 
+
+
 .tree .star {
-  margin-right: 5px; /* 별 사이의 간격 */
+  margin-right: 10px; /* 별 사이의 간격 */
+  width: 45px; /* 이미지 너비 */
+  height: 45px; /* 이미지 높이 */
 }
+

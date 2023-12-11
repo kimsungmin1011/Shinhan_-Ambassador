@@ -18,7 +18,9 @@ function Header() {
 
   return (
     <div className="header">
-      <img src={logo} alt="로고" />
+      <Link to="/" onClick={closeMenuAndNavigate}>
+        <img src={logo} alt="로고" />
+      </Link>
       <Link to="/" onClick={closeMenuAndNavigate}>
         <img src={Shinbad} alt="신밧드" />
       </Link>
@@ -30,7 +32,7 @@ function Header() {
           <li><Link to="/" onClick={closeMenuAndNavigate}>홈</Link></li>
           <li><Link to="/activity" onClick={closeMenuAndNavigate}>우리의 여정</Link></li>
           <li><Link to="/member" onClick={closeMenuAndNavigate}>라인업 소개</Link></li>
-          <li><Link to="/tree" onClick={closeMenuAndNavigate}>39기 방명록!</Link></li>
+          <li><Link to="/tree" onClick={closeMenuAndNavigate}>신대홍 우체국</Link></li>
         </ul>
       </nav>
     </div>

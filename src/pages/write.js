@@ -14,7 +14,7 @@ function Write() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:8080/guestbook', { name, content, team, recipient });
+        await axios.post('http://15.164.241.134:8080/guestbook', { name, content, team, recipient });
         // 폼 제출 후 필드 초기화
         setName('');
         setContent('');
@@ -28,11 +28,13 @@ function Write() {
         <div className="write-form">
             <form onSubmit={handleSubmit}>
                 <input
+                    className="form-element"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="이름"
                 />
                 <select
+                    className="form-element"
                     value={team}
                     onChange={(e) => setTeam(e.target.value)}
                 >
@@ -42,20 +44,22 @@ function Write() {
                     ))}
                 </select>
                 <select
+                    className="form-element"
                     value={recipient}
                     onChange={(e) => setRecipient(e.target.value)}
                 >
-                    <option value="">메시지를 보낼 팀을 선택하세요</option>
+                    <option value="">편지를 보낼 팀을 선택하세요</option>
                     {teams.map((show_team, index) => (
                         <option key={index} value={show_team}>{show_team}</option>
                     ))}
                 </select>
                 <textarea
+                    className="form-element"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    placeholder="메시지를 입력하세요"
+                    placeholder="편지 내용을 입력하세요"
                 />
-                <button type="submit">전송</button>
+                <button type="submit" className="form-element">전송</button>
             </form>
         </div>
     );

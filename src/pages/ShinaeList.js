@@ -1,35 +1,37 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate 훅 추가
+import { useNavigate } from 'react-router-dom';
 import './style/GuestbookList.css';
+import Letter from '../img/letter.png';
 
-function ShinaeList() {
+function CrimeList() {
     const [entries, setEntries] = useState([]);
     const [selectedEntry, setSelectedEntry] = useState(null);
-    const navigate = useNavigate(); // useNavigate 사용
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchEntries() {
-            const response = await axios.get('http://localhost:8080/guestbook/신아이');
+            const response = await axios.get('http://15.164.241.134:8080/guestbook/신아이');
             setEntries(response.data);
         }
         fetchEntries();
-        // 눈송이 추가
-    function addSnowflakes() {
-        const snowflakeCount = 50; // 원하는 눈송이의 수
-        for (let i = 0; i < snowflakeCount; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.textContent = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's'; // 눈송이가 떨어지는 속도를 랜덤하게 조절
-            snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
-            document.body.appendChild(snowflake);
-        }
-    }
 
-    addSnowflakes();
+        // Function to add snowflakes
+        function addSnowflakes() {
+            const snowflakeCount = 50;
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.textContent = '❄';
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
+                snowflake.style.opacity = Math.random();
+                snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+                document.body.appendChild(snowflake);
+            }
+        }
+
+        addSnowflakes();
     }, []);
 
     const handleEntryClick = (entry) => {
@@ -40,7 +42,7 @@ function ShinaeList() {
         if (!selectedEntry) return null;
         return (
             <div className="modal">
-                <h2>메시지 상세</h2>
+                <h2>편지 내용</h2>
                 <p><strong>이름:</strong> {selectedEntry.name}</p>
                 <p><strong>소속팀:</strong> {selectedEntry.team}</p>
                 <p><strong>내용:</strong> {selectedEntry.content}</p>
@@ -55,9 +57,7 @@ function ShinaeList() {
             <div className="entries-grid">
                 {entries.map((entry) => (
                     <div key={entry.id} className="entry" onClick={() => handleEntryClick(entry)}>
-                        <div className="letter">
-                            <p>메시지 #{entry.id}</p>
-                        </div>
+                        <img src={Letter} alt={`Letter ${entry.id}`} /> {/* Letter represented as an image */}
                     </div>
                 ))}
             </div>
@@ -67,4 +67,4 @@ function ShinaeList() {
     );
 }
 
-export default ShinaeList;
+export default CrimeList;
