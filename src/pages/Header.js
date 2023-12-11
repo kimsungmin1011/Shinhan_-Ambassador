@@ -32,7 +32,7 @@ function Header() {
           <li><Link to="/" onClick={closeMenuAndNavigate}>홈</Link></li>
           <li><Link to="/activity" onClick={closeMenuAndNavigate}>우리의 여정</Link></li>
           <li><Link to="/member" onClick={closeMenuAndNavigate}>라인업 소개</Link></li>
-          <li><Link to="/tree" onClick={closeMenuAndNavigate}>신대홍 우체국</Link></li>
+          <li><Link to="/tree" onClick={closeMenuAndNavigate}>신밧트리</Link></li>
         </ul>
       </nav>
     </div>
