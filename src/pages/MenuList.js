@@ -35,8 +35,7 @@ function CrimeList() {
     }, []);
 
     const handleEntryClick = (entry) => {
-        // setSelectedEntry(entry);
-        alert("편지 내용은 크리스마스에 공개됩니다!!");
+        setSelectedEntry(entry);
     };
 
     const renderModal = () => {
@@ -46,7 +45,7 @@ function CrimeList() {
                 <h2>편지 내용</h2>
                 <p><strong>보낸이:</strong> {selectedEntry.name}</p>
                 <p><strong>소속팀:</strong> {selectedEntry.team}</p>
-                <p><strong>내용:</strong> {selectedEntry.content}</p>
+                <p><strong>내용:</strong> 편지 내용은 크리스마스에 공개됩니다!!</p>
                 <button onClick={() => setSelectedEntry(null)}>닫기</button>
             </div>
         );
