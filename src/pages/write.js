@@ -14,7 +14,7 @@ function Write() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://15.164.241.134:8080/guestbook', { name, content, team, recipient });
+        await axios.post('http://3.38.148.174:8080/guestbook', { name, content, team, recipient });
         // 폼 제출 후 필드 초기화
         setName('');
         setContent('');

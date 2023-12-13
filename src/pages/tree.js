@@ -113,7 +113,7 @@ function App() {
         // treeData의 각 팀을 순회
         for (let i = 0; i < treeData.length; i++) {
           const teamName = treeData[i].name;
-          const response = await axios.get(`http://15.164.241.134:8080/guestbook/${teamName}`);
+          const response = await axios.get(`http://3.38.148.174:8080/guestbook/${teamName}`);
           newMessageCounts[i] = response.data.length; // 각 팀의 편지 수 업데이트
         }
   

@@ -11,7 +11,7 @@ function CrimeList() {
 
     useEffect(() => {
         async function fetchEntries() {
-            const response = await axios.get('http://15.164.241.134:8080/guestbook/신입사원');
+            const response = await axios.get('http://3.38.148.174:8080/guestbook/신입사원');
             setEntries(response.data);
         }
         fetchEntries();
@@ -35,7 +35,8 @@ function CrimeList() {
     }, []);
 
     const handleEntryClick = (entry) => {
-        setSelectedEntry(entry);
+        // setSelectedEntry(entry);
+        alert("편지 내용은 크리스마스에 공개됩니다!!");
     };
 
     const renderModal = () => {
@@ -43,7 +44,7 @@ function CrimeList() {
         return (
             <div className="modal">
                 <h2>편지 내용</h2>
-                <p><strong>이름:</strong> {selectedEntry.name}</p>
+                <p><strong>보낸이:</strong> {selectedEntry.name}</p>
                 <p><strong>소속팀:</strong> {selectedEntry.team}</p>
                 <p><strong>내용:</strong> {selectedEntry.content}</p>
                 <button onClick={() => setSelectedEntry(null)}>닫기</button>
