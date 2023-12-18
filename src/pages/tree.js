@@ -43,8 +43,6 @@ const createStars = (count) => {
   return Array.from({ length: count }, (_, i) => images[i % images.length]);
 };
 
-
-
 // Tree 컴포넌트
 const Tree = ({ name, url, image, nickimage, messageCount }) => {
   return (
@@ -63,7 +61,6 @@ const Tree = ({ name, url, image, nickimage, messageCount }) => {
   );
 };
 
-
 // TreesContainer component
 const TreesContainer = ({ messageCounts }) => (
   <div className="trees-container">
@@ -80,7 +77,6 @@ const TreesContainer = ({ messageCounts }) => (
   </div>
 );
 
-// ... (previous imports and code)
 
 function App() {
   const navigate = useNavigate(); // useNavigate 사용
