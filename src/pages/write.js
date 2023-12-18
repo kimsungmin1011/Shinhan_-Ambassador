@@ -57,7 +57,7 @@ function Write() {
                     className="form-element"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    placeholder="편지 내용을 입력하세요"
+                    placeholder="편지 내용을 입력하세요(255자 제한)"
                 />
                 <button type="submit" className="form-element">전송</button>
             </form>
